@@ -104,6 +104,18 @@ public class HDFSTest {
     }
 
     /**
+     * 删除HDFS文件
+     */
+    @Test
+    public void deleteFile() throws URISyntaxException, IOException {
+        String url = "hdfs://node01.hadoop.com:8020";
+        FileSystem fileSystem = FileSystem.get(new URI(url), new Configuration());
+
+        fileSystem.delete(new Path("/wordcountout"), true);
+        fileSystem.close();
+    }
+
+    /**
      * 在HDFS文件系统中创建文件夹
      */
     @Test
