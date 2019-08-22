@@ -12,6 +12,7 @@
         <module>01_zookeeper</module>
         <module>02_jvm</module>
         <module>03_hdfs</module>
+        <module>04_mr</module>
     </modules>
 
 

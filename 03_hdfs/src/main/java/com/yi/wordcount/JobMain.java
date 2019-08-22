@@ -21,14 +21,14 @@ public class JobMain extends Configured implements Tool {
     @Override
     public int run(String[] args) throws Exception {
         // 集群模式 数据来源，wordcount目录下的文件
-//        String inPath = "hdfs://node01.hadoop.com:8020/wordcount";
+        String inPath = "hdfs://node01.hadoop.com:8020/wordcount";
         // 集群模式 数据输出的位置
-//        String outPath = "hdfs://node01.hadoop.com:8020/wordcountout";
+        String outPath = "hdfs://node01.hadoop.com:8020/wordcountout";
 
         // 本地调试模式 数据来源，wordcount目录下的文件
-        String inPath = "file:///D:\\gitCode\\bigdata\\03_hdfs\\src\\test\\resources\\input";
+//        String inPath = "file:///D:\\gitCode\\bigdata\\03_hdfs\\src\\test\\resources\\input";
         // 本地模式 数据输出的位置
-        String outPath = "file:///D:\\gitCode\\bigdata\\03_hdfs\\target\\output";
+//        String outPath = "file:///D:\\gitCode\\bigdata\\03_hdfs\\target\\output";
 
         Job job = Job.getInstance(super.getConf(), "Job-1");
 
