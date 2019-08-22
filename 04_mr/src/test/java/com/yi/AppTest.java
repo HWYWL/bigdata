@@ -21,8 +21,8 @@ public class AppTest {
         String url = "hdfs://node01.hadoop.com:8020";
         FileSystem fileSystem = FileSystem.get(new URI(url), new Configuration());
 
-        fileSystem.copyFromLocalFile(new Path("D:\\gitCode\\bigdata\\04_mr\\src\\main\\resources\\inpartition\\partition.csv"),
-                new Path("/test/inpartition/partition.csv"));
+        fileSystem.copyFromLocalFile(new Path("D:\\gitCode\\bigdata\\04_mr\\src\\main\\resources\\flow\\data_flow.dat"),
+                new Path("/test/flow/data_flow.dat"));
 
         fileSystem.close();
     }
