@@ -35,7 +35,7 @@ public class AppTest {
         String url = "hdfs://node01.hadoop.com:8020";
         FileSystem fileSystem = FileSystem.get(new URI(url), new Configuration());
 
-        fileSystem.delete(new Path("/test/outpartition"), true);
+        fileSystem.delete(new Path("/test/flowout"), true);
         fileSystem.close();
     }
 }

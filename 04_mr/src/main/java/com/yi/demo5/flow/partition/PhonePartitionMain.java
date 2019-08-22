@@ -56,7 +56,18 @@ public class PhonePartitionMain extends Configured implements Tool {
         String[] array = new String[2];
         array[0] = "/test/flow";
         array[1] = "/test/flowout";
-        int run = ToolRunner.run(new Configuration(), new PhonePartitionMain(), array);
+
+        Configuration configuration = new Configuration();
+        //开启map阶段的数据压缩
+        configuration.set("mapreduce.map.output.compress","true");
+        configuration.set("mapreduce.map.output.compress.codec", "org.apache.hadoop.io.compress.SnappyCodec");
+
+        //开启reduce阶段的数据压缩
+        configuration.set("mapreduce.output.fileoutputformat.compress","true");
+        configuration.set("mapreduce.output.fileoutputformat.compress.type","RECORD");
+        configuration.set("mapreduce.output.fileoutputformat.compress.codec","org.apache.hadoop.io.compress.SnappyCodec");
+
+        int run = ToolRunner.run(configuration, new PhonePartitionMain(), array);
         System.exit(run);
     }
 }
