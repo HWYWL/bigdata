@@ -34,7 +34,7 @@ public class SortMain extends Configured implements Tool {
         job.setMapOutputValueClass(Text.class);
 
         // 设置规约
-//        job.setCombinerClass(MyCombiner.class);
+        job.setCombinerClass(MyCombiner.class);
 
         // 设置结果集合并
         job.setReducerClass(SortReducer.class);
