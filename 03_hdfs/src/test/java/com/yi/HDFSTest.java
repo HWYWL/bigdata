@@ -146,12 +146,12 @@ public class HDFSTest {
      */
     @Test
     public void mergeFile() throws URISyntaxException, IOException {
-        String url = "hdfs://node01.hadoop.com:8020";
+        String url = "hdfs://hwyxx.vicp.io:11111";
         FileSystem fileSystem = FileSystem.get(new URI(url), new Configuration());
-        FSDataOutputStream outputStream = fileSystem.create(new Path("/test/input/merge.xml"), true);
+        FSDataOutputStream outputStream = fileSystem.create(new Path("/test/input/merge1.xml"), true);
 
         LocalFileSystem local = FileSystem.getLocal(new Configuration());
-        FileStatus[] listStatus = local.listStatus(new Path("D:\\gitCode\\bigdata\\03_hdfs\\src\\test\\resources"));
+        FileStatus[] listStatus = local.listStatus(new Path("D:\\gitCode\\bigdata\\03_hdfs\\src\\test\\resources\\copy"));
 
         for (FileStatus status : listStatus) {
             FSDataInputStream inputStream = local.open(status.getPath());
