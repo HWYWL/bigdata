@@ -13,6 +13,7 @@
         <module>02_jvm</module>
         <module>03_hdfs</module>
         <module>04_mr</module>
+        <module>05_mr_yarn</module>
     </modules>
 
 
