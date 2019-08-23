@@ -1,6 +1,6 @@
 package com.yi.demo4;
 
-import org.apache.hadoop.io.NullWritable;
+import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Partitioner;
 
 /**
@@ -9,15 +9,15 @@ import org.apache.hadoop.mapreduce.Partitioner;
  * @author huangwenyi
  * @date 2019-8-23
  */
-public class OrderIdPartition extends Partitioner<OrderBean, NullWritable> {
+public class OrderIdPartition extends Partitioner<OrderBean, Text> {
     /**
      * @param orderBean     k2
-     * @param nullWritable  v2
+     * @param text  v2
      * @param numPartitions reduce的个数
      * @return
      */
     @Override
-    public int getPartition(OrderBean orderBean, NullWritable nullWritable, int numPartitions) {
+    public int getPartition(OrderBean orderBean, Text text, int numPartitions) {
         return (orderBean.getOrderId().hashCode() & Integer.MAX_VALUE) % numPartitions;
     }
 }

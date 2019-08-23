@@ -3,7 +3,7 @@ package com.yi.demo4;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.NullWritable;
+import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
@@ -11,7 +11,7 @@ import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
 /**
- * 使用分组求出每一个订单中成交金额最大的一笔交易
+ * 使用分组求出每一个订单中成交金额从大到小排序
  *
  * @author huangwenyi
  * @date 2019-8-23
@@ -30,7 +30,7 @@ public class OrderMain extends Configured implements Tool {
         //第二步：自定义map逻辑
         job.setMapperClass(OrderMapper.class);
         job.setMapOutputKeyClass(OrderBean.class);
-        job.setMapOutputValueClass(NullWritable.class);
+        job.setMapOutputValueClass(Text.class);
 
         //第三步：分区  排序
         job.setPartitionerClass(OrderIdPartition.class);
@@ -40,8 +40,8 @@ public class OrderMain extends Configured implements Tool {
 
         //第七步：reduce阶段
         job.setReducerClass(OrderReducer.class);
-        job.setOutputKeyClass(OrderBean.class);
-        job.setOutputValueClass(NullWritable.class);
+        job.setOutputKeyClass(Text.class);
+        job.setOutputValueClass(Text.class);
 
         //第八步：输出
         job.setOutputFormatClass(TextOutputFormat.class);
