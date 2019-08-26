@@ -21,8 +21,8 @@ public class AppTest {
         String url = "hdfs://node01.hadoop.com:8020";
         FileSystem fileSystem = FileSystem.get(new URI(url), new Configuration());
 
-        fileSystem.copyFromLocalFile(new Path("D:\\gitCode\\bigdata\\04_mr\\src\\main\\resources\\flow\\data_flow.dat"),
-                new Path("/test/flow/data_flow.dat"));
+        fileSystem.copyFromLocalFile(new Path("D:\\学习资料\\大数据教程\\配套资料\\07 -hive hive资料\\6、大数据离线第六天\\hive练习数据\\course.csv"),
+                new Path("/test/hive/course.csv"));
 
         fileSystem.close();
     }
@@ -35,7 +35,7 @@ public class AppTest {
         String url = "hdfs://node01.hadoop.com:8020";
         FileSystem fileSystem = FileSystem.get(new URI(url), new Configuration());
 
-        fileSystem.delete(new Path("/test/flowout"), true);
+        fileSystem.delete(new Path("/scoredatas/month=201807"), true);
         fileSystem.close();
     }
 }
