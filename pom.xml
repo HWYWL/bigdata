@@ -15,6 +15,7 @@
         <module>04_mr</module>
         <module>05_mr_yarn</module>
         <module>06_hiveudf</module>
+        <module>07_flume</module>
     </modules>
 
 
