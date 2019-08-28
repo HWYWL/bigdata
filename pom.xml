@@ -16,6 +16,7 @@
         <module>05_mr_yarn</module>
         <module>06_hiveudf</module>
         <module>07_flume</module>
+        <module>08_web_log_parser</module>
     </modules>
 
 
