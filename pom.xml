@@ -17,6 +17,7 @@
         <module>06_hiveudf</module>
         <module>07_flume</module>
         <module>08_web_log_parser</module>
+        <module>12_kafka</module>
     </modules>
 
 
