@@ -23,10 +23,12 @@ public class MyKafkaProducer {
         props.put("buffer.memory", 33554432);
         props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        // 自定义分区
+        props.put("partitioner.class", "com.yi.partitioner.MyOwnPartitioner");
 
         Producer<String, String> producer = new KafkaProducer<String, String>(props);
         for (int i = 0; i < 100; i++) {
-            producer.send(new ProducerRecord<String, String>("test", Integer.toString(i), Integer.toString(i)));
+            producer.send(new ProducerRecord<>("test", Integer.toString(i), Integer.toString(i)));
         }
         producer.close();
     }

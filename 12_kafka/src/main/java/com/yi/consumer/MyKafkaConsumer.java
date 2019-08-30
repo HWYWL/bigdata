@@ -1,5 +1,6 @@
 package com.yi.consumer;
 
+import jdk.nashorn.internal.objects.NativeJSON;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
@@ -36,6 +37,7 @@ public class MyKafkaConsumer {
             ConsumerRecords<String, String> records = consumer.poll(100);
             for (ConsumerRecord<String, String> record : records) {
                 buffer.add(record);
+                System.out.println(record.toString());
             }
             if (buffer.size() >= minBatchSize) {
                 //   insertIntoDb(buffer);
