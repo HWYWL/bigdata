@@ -11,7 +11,6 @@ import org.apache.storm.generated.InvalidTopologyException;
 import org.apache.storm.kafka.spout.KafkaSpout;
 import org.apache.storm.kafka.spout.KafkaSpoutConfig;
 import org.apache.storm.topology.TopologyBuilder;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -61,7 +60,6 @@ public class RealBoardConfig {
 
         if (!StringUtils.isEmpty(name)) {
             StormSubmitter.submitTopology(name, config, builder.createTopology());
-
         } else {
             LocalCluster cluster = new LocalCluster();
             cluster.submitTopology("countMoney", config, builder.createTopology());

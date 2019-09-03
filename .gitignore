@@ -7,3 +7,4 @@ bigdata.iml
 12_kafka/target/
 logs/
 13_read_board/.mvn/
+13_read_board/dependency-reduced-pom.xml
