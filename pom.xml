@@ -20,6 +20,7 @@
         <module>12_kafka</module>
         <module>13_storm</module>
         <module>13_read_board</module>
+        <module>14_hbase</module>
     </modules>
 
 
