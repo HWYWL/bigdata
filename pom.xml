@@ -21,6 +21,7 @@
         <module>13_storm</module>
         <module>13_read_board</module>
         <module>14_hbase</module>
+        <module>15_spark</module>
     </modules>
 
 

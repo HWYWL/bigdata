@@ -9,3 +9,4 @@ logs/
 13_read_board/.mvn/
 13_read_board/dependency-reduced-pom.xml
 14_hbase/target/
+15_spark/target/

@@ -14,7 +14,7 @@ import java.util.List;
  * HBASE CRUD基本操作
  *
  * @author huangwenyi
- * @date 2019-9-16 
+ * @date 2019-9-16
  */
 public class HbaseCRUD {
     private static Admin admin;
